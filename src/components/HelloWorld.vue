@@ -15,7 +15,14 @@
             <input type="submit" class="fadeIn fourth" value="Log In">
           </form>
           <div class="fadeIn fifth" style= "padding-bottom: 15px;">
-            <button v-if="!authenticated" @click="login"  type="button" class="btn btn-light" id="loginButton" style="  width:200px; height:40px; border-radius:3%;" > <img src="https://img.icons8.com/color/16/000000/google-logo.png" >             Login with Google</button>
+            <table>
+          		<td style="padding-left: 20px;">
+          			<button v-if="!authenticated" @click="signup"  type="button" class="btn btn-light" id= "loginButton" style="  width:180px; height:45px; border-radius:3%;"> <img src="https://img.icons8.com/color/16/000000/google-logo.png">             Create an account with Google</button>
+          		</td>
+          		<td>
+            		<button v-if="!authenticated" @click="login"  type="button" class="btn btn-light" id="loginButton" style="  width:180px; height:45px; border-radius:3%;" > <img src="https://img.icons8.com/color/16/000000/google-logo.png" >             Login with Google</button>
+        		  </td>
+            </table>
           </div>
         </div>
       </div>
