@@ -2,78 +2,61 @@
   <div class="hello">
 
     <!-- Aquí va a ir todo lo del LOG IN-->
-    <div class="fadeInDown rounded" style=" border:none;">
-      <div id="formContent" style= "background-color: #4172fd;">
-        <div class="fadeIn first">
-          <img src="../../public/logowordie.jpg" id="icon" alt="User Icon" />
-        </div>
+    <div class="login">
+      <div v-if="!authenticated" class="fadeInDown rounded" style=" border:none;">
+        <div id="formContent" style= "background-color: #4172fd;">
+          <div class="fadeIn first">
+            <img src="../../public/logowordie.jpg" id="icon" alt="User Icon" />
+          </div>
 
-        <form id= "formCss">
-          <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-          <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-          <input type="submit" class="fadeIn fourth" value="Log In">
-        </form>
-        <div class="fadeIn fifth" style= "padding-bottom: 15px;">
-          <button v-if="!authenticated" @click="login"  type="button" class="btn btn-light" id="loginButton" style="  width:200px; height:40px; border-radius:3%;" > <img src="https://img.icons8.com/color/16/000000/google-logo.png" >             Login with Google</button>
+          <form id= "formCss">
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+          </form>
+          <div class="fadeIn fifth" style= "padding-bottom: 15px;">
+            <button v-if="!authenticated" @click="login"  type="button" class="btn btn-light" id="loginButton" style="  width:200px; height:40px; border-radius:3%;" > <img src="https://img.icons8.com/color/16/000000/google-logo.png" >             Login with Google</button>
+          </div>
         </div>
       </div>
     </div>
 
     <div v-if="authenticated">
-      <div class="container-fluid m-0 p-0">
-        <div id="bar" class="bg-primary p-4">
-          <div class="row">
-            <div class="col-7" id="dailyWord">
-              <a href="/HelloWorld.vue">
-                <img class="cen" alt="logo" src="https://i.ibb.co/Dg72xVq/Whats-App-Image-2021-09-16-at-8-53-53-PM.png" height="50" width="50">
-                </a>
+      <div id="bar" class="bg-primary p-4">
+          <div class="row align-items-center">
+            <div class="col-lg-8 col-md-5">
+              <a href="HelloWorld.vue">
+                <h5 class="text-white">DailyWord</h5>
+              </a>
             </div>
-            <div class="col" id="texto">
-              <h5 class="align-text-top text-white">Mis Palabras</h5>
+            <div class="col-lg-2 col-md-3">
+              <h5 class="text-white">Mis Palabras</h5>
             </div>
-            
-            
             <div class="col">
-              <i
-                class="bi-person-circle align-text-top"
-                style="font-size: 2rem; color: white"
-              ></i>
-            </div>
-
-             <div class="col">
-           <!-- botón de LOGOUT-->
+            <!-- botón de LOGOUT-->
               <button @click="logout" type="button" class="btn btn-outline-light">Logout</button>
             </div>
-
-            
-
           </div>
         </div>
-        
         <div id="landing-text" class="">
+          <div class="">
+              <img src="https://i.ibb.co/6n7sm0x/nick-fithen-Y125-COCWeu-Q-unsplash.jpg" alt="" id="landingimg"/>
+            </div>
           <div class="row">
-            <p class="col-8 offset-3 fs-1 fw-bold">Hola, {{ firstName }}</p>
-          </div>
-          <div>
-            <p class="col-8 text-muted offset-3 fs-3">
-              You can only fail when you stop trying.
+            <p class="col-8 offset-2 fs-1 fw-bold">Hola, {{ firstName }}</p>
+            <p class="col-lg-6 col-6 text-muted offset-2 fs-4">
+              Bienvenido, tu palabra del día es la siguiente:
             </p>
-
+            <br>
             <!-- aqui imprimo la palabra-->
-            <p class="col-8 text-muted offset-3 fs-3">{{ palabra }}</p>
+            <p class="col-8 offset-2 fs-4">Palabra: {{ palabra }}</p>
             <!-- aqui imprimo la definición-->
-            <p class="col-8 text-muted offset-3 fs-3">{{ def }}</p>
-
-           
-           <!-- botón de save word-->
-              <button @click="createWord(palabra,def,user.data.displayName)" type="button" class="btn btn-primary"> Save word</button>
-            
-
+            <p class="col-8 offset-2 fs-4">Definición: {{ def }}</p>
+            <button @click="createWord(palabra,def,user.data.displayName)" type="button" class="btn btn-primary col-md-2 col-8 offset-md-3 offset-1" style="position: relative; top:30px; left: 50px"> Guardar Palabra</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 
@@ -176,12 +159,57 @@ axios.request(options).then(function (response) {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+#landingimg{
+  width: 45%; 
+  position:fixed; 
+  bottom: -90%; 
+  left:90%;
+}
+
+@media screen and (max-width: 1700px) {
+  #landingimg{
+    width: 30%;
+    left: 80%;
+    bottom: -50%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  #landingimg{
+    width: 30%;
+    left: 70%;
+    bottom: -50%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #landingimg{
+    width: 30%;
+    left: 60%;
+    bottom: -50%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #landingimg{
+    left: 0%;
+    display: none;
+  }
+}
+
+#bar{
+  position: fixed;
+  width: 100%;
+}
+
 #landing-text {
   margin: 0;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
 }
 #texto {
   text-align: center;
@@ -201,14 +229,13 @@ axios.request(options).then(function (response) {
 
 
 
-.hello {
+.login {
   display: flex;
   align-items: center;
   flex-direction: column; 
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  padding: 20px;
 }
 
 #icon {
