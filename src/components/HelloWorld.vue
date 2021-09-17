@@ -30,7 +30,7 @@
               </a>
             </div>
             <div class="col-lg-2 col-md-3">
-              <h5 class="text-white">Mis Palabras</h5>
+              <h5 class="text-white">Mis palabras</h5>
             </div>
             <div class="col">
             <!-- botón de LOGOUT-->
