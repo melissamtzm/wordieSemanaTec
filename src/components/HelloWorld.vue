@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-
+    <img src="https://i.ibb.co/6n7sm0x/nick-fithen-Y125-COCWeu-Q-unsplash.jpg" alt="" id="landingimg"/>
     <!-- Aquí va a ir todo lo del LOG IN-->
     <div class="login">
       <div v-if="!authenticated" class="fadeInDown rounded" style=" border:none;">
@@ -39,20 +39,19 @@
           </div>
         </div>
         <div id="landing-text" class="">
-          <div class="">
-              <img src="https://i.ibb.co/6n7sm0x/nick-fithen-Y125-COCWeu-Q-unsplash.jpg" alt="" id="landingimg"/>
-            </div>
           <div class="row">
-            <p class="col-8 offset-2 fs-1 fw-bold">Hola, {{ firstName }}</p>
-            <p class="col-lg-6 col-6 text-muted offset-2 fs-4">
+            <p class="col-8 offset-1 fs-1 fw-bold">Hola, {{ firstName }}</p>
+            <p class="col-lg-6 col-6 text-muted offset-1 fs-4">
               Bienvenido, tu palabra del día es la siguiente:
             </p>
             <br>
             <!-- aqui imprimo la palabra-->
-            <p class="col-8 offset-2 fs-4">Palabra: {{ palabra }}</p>
+            <p class="col-8 offset-1 fs-4">Palabra: {{ palabra }}</p>
             <!-- aqui imprimo la definición-->
-            <p class="col-8 offset-2 fs-4">Definición: {{ def }}</p>
+            <p class="col-4 offset-1 fs-4">Definición: {{ def }}</p>
+          <div class="row">
             <button @click="createWord(palabra,def,user.data.displayName)" type="button" class="btn btn-primary col-md-2 col-8 offset-md-3 offset-1" style="position: relative; top:30px; left: 50px"> Guardar Palabra</button>
+          </div>
           </div>
         </div>
       </div>
@@ -160,31 +159,34 @@ axios.request(options).then(function (response) {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 #landingimg{
-  width: 45%; 
+  width: 30%; 
   position:fixed; 
-  bottom: -90%; 
-  left:90%;
+  bottom: 5%; 
+  left: 60%;
 }
 
 @media screen and (max-width: 1700px) {
   #landingimg{
-    width: 30%;
-    left: 80%;
-    bottom: -50%;
+    width: 25%;
+    left: 70%;
+    bottom: 0%;
+    position:fixed; 
   }
 }
 @media screen and (max-width: 1400px) {
   #landingimg{
-    width: 30%;
-    left: 70%;
-    bottom: -50%;
+    width: 25%;
+    left: 60%;
+    bottom: 8%;
+    position:fixed; 
   }
 }
 @media screen and (max-width: 1200px) {
   #landingimg{
-    width: 30%;
+    width: 20%;
     left: 60%;
-    bottom: -50%;
+    bottom: 8%;
+    position:fixed; 
   }
 }
 @media screen and (max-width: 1200px) {
