@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <img src="https://i.ibb.co/6n7sm0x/nick-fithen-Y125-COCWeu-Q-unsplash.jpg" alt="" id="landingimg"/>
     <!-- Aquí va a ir todo lo del LOG IN-->
     <div class="login">
       <div v-if="!authenticated" class="fadeInDown rounded" style=" border:none;">
@@ -16,12 +15,16 @@
           </form>
           <div class="fadeIn fifth" style= "padding-bottom: 15px;">
             <table>
-          		<td style="padding-left: 20px;">
-          			<button v-if="!authenticated" @click="signup"  type="button" class="btn btn-light" id= "loginButton" style="  width:180px; height:45px; border-radius:3%;"> <img src="https://img.icons8.com/color/16/000000/google-logo.png">             Create an account with Google</button>
-          		</td>
-          		<td>
-            		<button v-if="!authenticated" @click="login"  type="button" class="btn btn-light" id="loginButton" style="  width:180px; height:45px; border-radius:3%;" > <img src="https://img.icons8.com/color/16/000000/google-logo.png" >             Login with Google</button>
-        		  </td>
+              <td style="padding-left: 20px;">
+                <button v-if="!authenticated" @click="signup"  type="button" class="btn btn-light" id= "loginButton" style="  width:180px; height:45px; border-radius:3%;">
+                  <img src="https://img.icons8.com/color/16/000000/google-logo.png">Create an account with Google
+                </button>
+              </td>
+              <td>
+                <button v-if="!authenticated" @click="login"  type="button" class="btn btn-light" id="loginButton" style="  width:180px; height:45px; border-radius:3%;" >
+                  <img src="https://img.icons8.com/color/16/000000/google-logo.png">Login with Google
+                </button>
+              </td>
             </table>
           </div>
         </div>
@@ -29,6 +32,7 @@
     </div>
 
     <div v-if="authenticated">
+      <img src="https://i.ibb.co/6n7sm0x/nick-fithen-Y125-COCWeu-Q-unsplash.jpg" alt="" id="landingimg"/>
       <div id="bar" class="bg-primary p-4">
           <div class="row align-items-center">
             <div class="col-lg-8 col-md-5">
