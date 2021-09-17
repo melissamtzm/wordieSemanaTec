@@ -125,6 +125,8 @@ export default {
         if (user) {
           this.user.loggedIn = true;
           this.user.data = user;
+
+
           const options = {
   method: 'GET',
   url: 'https://wordsapiv1.p.rapidapi.com/words/',
@@ -154,6 +156,7 @@ axios.request(options).then(function (response) {
           this.user.data = {};
         }
       })
+      
       
   
     }
