@@ -16,7 +16,9 @@
         <div id="bar" class="bg-primary p-4">
           <div class="row">
             <div class="col-7" id="dailyWord">
-              <h5 class="align-text-top text-white">DailyWord</h5>
+              <a href="/HelloWorld.vue">
+                <img class="cen" alt="logo" src="https://i.ibb.co/Dg72xVq/Whats-App-Image-2021-09-16-at-8-53-53-PM.png" height="50" width="50">
+                </a>
             </div>
             <div class="col" id="texto">
               <h5 class="align-text-top text-white">Mis Palabras</h5>
