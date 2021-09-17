@@ -156,9 +156,6 @@ axios.request(options).then(function (response) {
           this.user.data = {};
         }
       })
-      
-      
-  
     }
 }
 </script>
